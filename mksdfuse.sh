@@ -261,7 +261,7 @@ install_output()
 			sudo su -c "cp $TARGET_DIR/partmap_emmc.txt mnt"
 			;;
 		s5p4418)
-			sudo su -c "cp $TARGET_DIR/bl1-emmcboot.img mnt"
+			sudo su -c "cp $TARGET_DIR/bl1-emmcboot.bin mnt"
 			sudo su -c "cp $TARGET_DIR/loader-emmc.img mnt"
 			sudo su -c "cp $TARGET_DIR/bl_mon.img mnt"
 			sudo su -c "cp $TARGET_DIR/secureos.img mnt"

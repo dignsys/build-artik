@@ -84,7 +84,7 @@ s5p6818_sdboot_gen()
 
 s5p4418_sdboot_gen()
 {
-	cp $PREBUILT_DIR/bl1-*.img $TARGET_DIR
+	cp $PREBUILT_DIR/bl1-*.bin $TARGET_DIR
 	cp $PREBUILT_DIR/loader-*.img $TARGET_DIR
 	cp $PREBUILT_DIR/partmap_emmc.txt $TARGET_DIR
 	cp $PREBUILT_DIR/bl_mon.img $TARGET_DIR
@@ -99,7 +99,7 @@ s5p4418_sdboot_gen()
 		cp $PREBUILT_DIR/flag.img $TARGET_DIR
 	fi
 
-	dd conv=notrunc if=$TARGET_DIR/bl1-sdboot.img of=$IMG_NAME bs=512 seek=$BL1_OFFSET
+	dd conv=notrunc if=$TARGET_DIR/bl1-sdboot.bin of=$IMG_NAME bs=512 seek=$BL1_OFFSET
 	dd conv=notrunc if=$TARGET_DIR/loader-sd.img of=$IMG_NAME bs=512 seek=$LOADER_OFFSET
 	dd conv=notrunc if=$TARGET_DIR/bl_mon.img of=$IMG_NAME bs=512 seek=$BLMON_OFFSET
 
@@ -150,7 +150,7 @@ case "$CHIP_NAME" in
 		test -e $PREBUILT_DIR/fip-secure.img || die
 		;;
 	s5p4418)
-		test -e $PREBUILT_DIR/bl1-sdboot.img || die
+		test -e $PREBUILT_DIR/bl1-sdboot.bin || die
 		;;
 	*)
 		test -e $PREBUILT_DIR/bl1.bin || die

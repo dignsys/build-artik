@@ -270,7 +270,7 @@ gen_artik_release
 if [ "$KMS_PREBUILT_DIR" == "false" ]; then
 
 if [ "$PREBUILT_VBOOT_DIR" == "" ]; then
-	./build_uboot.sh
+	./build_uboot.sh 
 	./build_kernel.sh --kernel-headers
 
 	if $VERIFIED_BOOT ; then
@@ -372,6 +372,7 @@ fi
 
 if [ -e $PREBUILT_DIR/flash_all_by_fastboot.sh ]; then
 	cp $PREBUILT_DIR/flash_all_by_fastboot.sh $TARGET_DIR
+	cp $PREBUILT_DIR/flash_boot_by_fastboot.sh $TARGET_DIR
 	[ -e $PREBUILT_DIR/partition.txt ] && cp $PREBUILT_DIR/partition.txt $TARGET_DIR
 else
 	cp flash_all_by_fastboot.sh $TARGET_DIR

@@ -39,7 +39,7 @@ parse_options()
 
 build()
 {
-	make distclean
+#	make distclean
 	make $KERNEL_DEFCONFIG
 	make $KERNEL_IMAGE -j$JOBS EXTRAVERSION="-$BUILD_VERSION"
 	make $BUILD_DTB EXTRAVERSION="-$BUILD_VERSION"
