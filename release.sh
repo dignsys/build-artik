@@ -18,6 +18,7 @@ DEPLOY=false
 OS_NAME=fedora
 KMS_PREBUILT_DIR=false
 KMS_TARGET_DIR=false
+BUILD_VERSION=DS2020
 
 print_usage()
 {
@@ -291,7 +292,9 @@ if $SECURE_BOOT ; then
 	./mksboot.sh $TARGET_DIR
 fi
 
+echo "HBAHN start mksdboot"
 ./mksdboot.sh
+echo "HBAHN end mksdboot"
 
 ./mkbootimg.sh
 
